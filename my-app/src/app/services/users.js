@@ -1,5 +1,5 @@
 import { customFetch } from "../../utils/customFetch";
-const URL = "http://localhost:3000";
+const URL = process.env.NEXT_PUBLIC_URL;
 
 export const getUsers = () => {
   return customFetch(`${URL}/api/users`, {
