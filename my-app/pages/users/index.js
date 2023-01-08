@@ -1,6 +1,7 @@
-import { Box, Button, Center, Flex, Link } from "@chakra-ui/react";
+import { Button, Center, Flex, Link, Text } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState } from "react";
+import { Spinner } from "@chakra-ui/react";
 import { getUsers } from "../../src/app/services/users";
 import UsersTable from "../../src/app/user";
 
@@ -11,7 +12,22 @@ const UsersPage = () => {
     getUsers().then(({ response }) => setResponse(response));
   }, []);
 
-  if (!response) return <div>Loading...</div>;
+  if (!response)
+    return (
+      <Center h="100vh" display="flex" flexDirection="column">
+        {" "}
+        <Spinner
+          thickness="4px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="pink.500"
+          size="xl"
+        />
+        <Text fontSize="20px" marginY="20px">
+          Cargando...
+        </Text>
+      </Center>
+    );
 
   return (
     <Flex w="80%" h="100%" margin="0 auto" flexDirection="column">

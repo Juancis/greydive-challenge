@@ -19,12 +19,12 @@ const DataTable = ({ data, columns, identifier }) => {
                 <Th
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   isNumeric={column.isNumeric}
-                  background="white.100"
+                  background="white"
                   paddingLeft="4.3rem"
                   textAlign="center"
                   fontWeight="300"
                   color="black.600"
-                  letterSpacing={"2px"}
+                  letterSpacing={"4px"}
                   key={`${index}-tablehead`}
                 >
                   {column.render("Header")}
@@ -62,10 +62,9 @@ const DataTable = ({ data, columns, identifier }) => {
                     {...cell.getCellProps()}
                     isNumeric={cell.column.isNumeric}
                     key={cell.column.id}
-                    background="pink.200"
-                    color="white"
+                    background="pink.100"
+                    color="black"
                     fontSize={"15px"}
-                    textShadow={"1px 1px 1px black"}
                     borderColor="gray"
                     paddingLeft="4.3rem"
                     textAlign="center"
