@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDtzss3Eo5GbAXXdYNrujw92D0jmRJamhY",
-  authDomain: "greydive-challenge-d586c.firebaseapp.com",
-  projectId: "greydive-challenge-d586c",
-  storageBucket: "greydive-challenge-d586c.appspot.com",
-  messagingSenderId: "320808573946",
-  appId: "1:320808573946:web:f009ec8ff853e8935f2243",
+  apiKey: `${process.env.NEXT_PUBLIC_apiKey}`,
+  authDomain: `${process.env.NEXT_PUBLIC_authDomain}`,
+  projectId: `${process.env.NEXT_PUBLIC_projectId}`,
+  storageBucket: `${process.env.NEXT_PUBLIC_storageBucket}`,
+  messagingSenderId: `${process.env.NEXT_PUBLIC_messagingSenderId}`,
+  appId: `${process.env.NEXT_PUBLIC_appId}`,
 };
 
 const app = initializeApp(firebaseConfig);
